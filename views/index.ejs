@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory App</title>
+    <link rel="stylesheet" href="css/index.css" />
+</head>
+<body>
+    <header class="header">
+        <h1><i>Music</i> Inventory</h1>
+    </header>
+    <main class="inventory-main">
+        <div id="inventory-controls">
+            <a href="/newtrack" id="newTrackButton">NEW TRACK</a>
+            <a href="/" id="showHomeButton">HOME</a>    
+            <a href="/searchtrack" id="searchTrackButton">FIND TRACK</a>
+        </div>
+        <% if(show === "alltracks"){ %>
+            <%- include('partials/inventoryView', { tracks: tracks }) %>
+        <% } %>
+        <% if(show === "specificTrackForm"){ %>
+            <%- include('partials/specificTrackFind') %>
+        <% } %>
+    </main>
+    <footer class="footer"></footer>
+
+</body>
+</html>

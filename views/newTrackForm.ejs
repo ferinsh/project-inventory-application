@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add new Track</title>
+</head>
+<body>
+    <header class="new-track-header">
+        <h1>Add new track</h1>
+    </header>
+    <main>
+        <form action="/newtrack" method="POST">
+            <label for="title">Track Title:</label>
+            <input type="text" id="title" name="title" required><br><br>
+            
+            <label for="artist">Artist:</label>
+            <input type="text" id="artist" name="artist" required><br><br>
+            
+            <label for="duration">Duration:</label>
+            <input type="text" id="duration" name="duration" placeholder="e.g., '3:45'" pattern="\d{1,2}:\d{2}" title="Duration must be in the format minutes:seconds (e.g., 3:45)" required><br><br>
+            
+            <label for="image">Image URL:</label>
+            <input type="text" id="image" name="image" placeholder="URL of the track's cover image"><br><br>
+            
+            <button type="submit">Add Track</button>
+        </form>
+    </main>
+</body>
+</html>

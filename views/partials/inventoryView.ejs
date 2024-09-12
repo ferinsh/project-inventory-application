@@ -1,0 +1,15 @@
+<div id="inventory-view">
+    <!-- ADD tracks ARRAY CONTENTS HERE -->
+    <% if (tracks && tracks.length > 0) { %>
+        <% tracks.forEach(track => { %>
+            <div class="track">
+                <h2><%= track.title %></h2>
+                <p><strong>Artist:</strong> <%= track.artist %></p>
+                <p><strong>Duration:</strong> <%= track.duration %></p>
+                <img src="<%= track.image %>" alt="<%= track.title %>" class="track-image">
+            </div>
+        <% }); %>
+    <% } else { %>
+        <p>No tracks available.</p>
+    <% } %>
+</div>
