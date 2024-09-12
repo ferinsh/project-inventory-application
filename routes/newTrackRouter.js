@@ -8,7 +8,7 @@ newTrackRouter.get("/", (req, res) => {
 })
 
 newTrackRouter.post("/", (req, res) => {
-   newTrackController.addTrack(req, res);
+   newTrackController.addTrackControl(req, res);
 })
 
 module.exports = newTrackRouter;

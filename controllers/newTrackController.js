@@ -4,7 +4,7 @@ function getNewTrackView(req, res) {
     res.render("newTrackForm.ejs");
 }
 
-async function addTrack(req, res) {
+async function addTrackControl(req, res) {
     const { title, artist, duration, image } = req.body;
 
     try {
@@ -16,4 +16,4 @@ async function addTrack(req, res) {
     }
 }
 
-module.exports = { getNewTrackView, addTrack };
+module.exports = { getNewTrackView, addTrackControl };
