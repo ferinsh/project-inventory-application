@@ -1,4 +1,4 @@
-const {getAllTracks} = require("../db/queries")
+const { getAllTracks } = require('../db/queries');
 
 function formatDuration(duration) {
     const hours = duration.hours || 0;
@@ -7,13 +7,9 @@ function formatDuration(duration) {
     return `${hours}h ${minutes}m ${seconds}s`;
 }
 
-
-async function showIndex(req, res){
-    
-
+async function showIndex(req, res) {
     try {
         const tracks = await getAllTracks();
-        // console.log(tracks);
         const formattedTracks = tracks.map(track => ({
             ...track,
             duration: formatDuration(track.duration)
@@ -22,13 +18,10 @@ async function showIndex(req, res){
             show: "alltracks",
             tracks: formattedTracks
         });
-    } catch(err) {
-        console.error(err)
+    } catch (err) {
+        console.error(err);
+        res.status(500).send('Internal Server Error');
     }
-
-
 }
 
-module.exports = {
-    showIndex
-}
+module.exports = { showIndex };
